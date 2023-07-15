@@ -25,8 +25,12 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        run: terraform plan -out=tfplan
+        run: terraform plan
+
+      - name: Set output
+        id: plan
+        run: echo "::set-output name=plan::$(terraform plan -no-color)"
 
       - name: Terraform apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply tfplan
+        run: terraform apply -auto-approve ${{ steps.plan.outputs.plan }}

@@ -1,5 +1,5 @@
 variable "path" {
-  default     = "./secrets"
+  default     = "../../../secrets"
   description = "Path to the google service account credentials file"
 }
 
