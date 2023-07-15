@@ -59,7 +59,7 @@ sudo systemctl enable salt-master ; sudo systemctl restart salt-master
 
 # create the config in .ssh/config
 sudo echo "Host github.com
-  HostName biaandersson@github.com
+  HostName github.com
   User git
   IdentityFile /root/.ssh/salt-deploy
   IdentitiesOnly yes" > /root/.ssh/config
