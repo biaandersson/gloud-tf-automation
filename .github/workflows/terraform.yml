@@ -18,13 +18,13 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.0
+          GCLOUD_JSON: ${{ secrets.GCLOUD_JSON }}
+
       - name: Terraform init
         run: terraform init
 
       - name: Terraform validate
         run: terraform validate
-        with:
-          GCLOUD_JSON: ${{ secrets.GCLOUD_JSON }}
 
       # - name: Terraform plan
       #   id: plan
