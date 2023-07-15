@@ -5,7 +5,7 @@ variable "instance_name" {
 
 variable "instance_type" {
   description = "Type of the instance(s) to create"
-  default     = "e2-micro"
+  default     = "e2-medium"
   type        = string
 }
 
