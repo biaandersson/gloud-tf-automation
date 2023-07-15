@@ -57,7 +57,7 @@ variable "project_id" {
 }
 ```
 
-You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `generic/modules/automation/scripts/` to set your onw ssh keys.
+You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `generic/modules/automation/scripts/` to set your own ssh keys.
 
 ```bash
 ssh-keygen -t ecdsa -f <key-name>
