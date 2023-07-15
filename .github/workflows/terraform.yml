@@ -25,12 +25,14 @@ jobs:
       - name: Terraform validate
         run: terraform validate
         env:
-          GCLOUD_JSON: ${{ secrets.GCLOUD_JSON }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       - name: Terraform plan
         id: plan
         run: terraform plan
         continue-on-error: false
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
       # - name: Save plan path to GITHUB_OUTPUT
       #   run: echo "PLAN_PATH=tfplan" >> $GITHUB_OUTPUT
