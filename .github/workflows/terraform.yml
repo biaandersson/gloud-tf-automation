@@ -18,7 +18,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.0
-          GCLOUD_JSON: ${{ secrets.GCLOUD_JSON }}
+          cli_config_credentials_token: ${{ secrets.GCLOUD_JSON }}
 
       - name: Terraform init
         run: terraform init
@@ -26,10 +26,10 @@ jobs:
       - name: Terraform validate
         run: terraform validate
 
-      # - name: Terraform plan
-      #   id: plan
-      #   run: terraform plan
-      #   continue-on-error: false
+      - name: Terraform plan
+        id: plan
+        run: terraform plan
+        continue-on-error: false
 
       # - name: Save plan path to GITHUB_OUTPUT
       #   run: echo "PLAN_PATH=tfplan" >> $GITHUB_OUTPUT
