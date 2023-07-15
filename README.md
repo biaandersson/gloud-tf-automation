@@ -1,4 +1,22 @@
-# GCP Terraform Automation
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=600px height=250px src="https://miro.medium.com/v2/resize:fit:1400/1*I1tkE4KvxSfShAZDllAGBA.png" alt="Project logo"></a>
+</p>
+
+<h3 align="center">Terraform Automation</h3>
+
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+---
+
+<p align="center"> Terraform Automation, a project to automate the creation of infrastructure in Cloud, using Terraform and GitHub Actions.
+    <br> 
+</p>
 
 ## Table of Contents
 
@@ -8,7 +26,7 @@
 
 ## About <a name = "about"></a>
 
-Terraform module to create GCP instance infrastructure and install saltstack on the instance.
+This project is a simple example of how to use Terraform and GitHub Actions to automate the creation of infrastructure in Cloud. It will create a VM instance in GCP and install Saltstack on it. It will also clone a saltstack repo and configure the master and minions config files.
 
 ## Getting Started <a name = "getting_started"></a>
 
