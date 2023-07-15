@@ -27,6 +27,8 @@ cd gcloud-tf-automation
 
 You'll have to create a service account key in GCP and download the json file. Then create the `GOOGLE_CREDENTIALS` secret in the GitHub repo to the contents of the json file.
 
+Change the GitHub Actions workflow yaml to be `main` branch instead of `staging`. This is located in the `.github/workflows/main.yml` file.
+
 You'll have to change the `project_id` variable in the `variables.tf` file to your own project id. This is located in the `generic/modules/automation/variables.tf` file.
 
 ```bash
@@ -58,7 +60,6 @@ module "automation" {
 If you are creating a salt master, change the `salt_master` variable to `true`.
 
 ```bash
-
 module "automation" {
   source        = "./generic/modules/automation"
   instance_name = ["test-saltmaster01"]
