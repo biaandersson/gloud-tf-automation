@@ -1,4 +1,4 @@
-name: Infrastructure as Code
+name: Terraform Instance Creation
 
 on:
   push:

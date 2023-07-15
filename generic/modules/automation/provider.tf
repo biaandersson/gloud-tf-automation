@@ -1,11 +1,16 @@
+variable "path" {
+  type    = string
+  default = "./secrets"
+}
+
 provider "google" {
   project = "quickstart-terraform"
   region  = "europe-north1"
-  # credentials = jsondecode(github_actions_secret.CLOUD_JSON)
+  # credentials = "${var.path}/secret.json"
 }
 
 provider "google-beta" {
   project = "quickstart-terraform"
   region  = "europe-north1"
-  # credentials = jsondecode(github_actions_secret.CLOUD_JSON)
+  # credentials = "${var.path}/secret.json"
 }

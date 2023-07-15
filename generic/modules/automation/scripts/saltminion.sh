@@ -1,5 +1,7 @@
 #!/bin/bash
 
+masterIP=""
+
 # update, clean, upgrade
 sudo apt-get update ; sudo apt-get clean ; sudo apt-get upgrade -y
 
@@ -18,12 +20,11 @@ sudo echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/TB/1qVDU0TB1AskDRHPIiFWkD8irk
 # restart ssh
 sudo systemctl ssh restart
 
-# echo hostname and ip
-echo "salt-minion ip: $(hostname -I | awk '{print $1}')"
-echo "salt-minion hostname: $(hostname)"
+# backup the salt-minion config
+sudo mv /etc/salt/minion /etc/salt/minion.bak
 
-# add salt-master ip to /etc/salt/minion
-sudo echo "master: whatever ip salt-master has" >> /etc/salt/minion
+# create the salt-minion config
+sudo echo "master: $masterIP" > /etc/salt/minion
 
 # enable and restart salt-master
 sudo systemctl enable salt-minion ; sudo systemctl restart salt-minion
