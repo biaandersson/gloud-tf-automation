@@ -85,3 +85,9 @@ variable "salt_master" {
   description = "Used to determine if saltmaster or saltminion should be installed"
   type        = bool
 }
+
+variable "project_id" {
+  description = "Project id of the instance(s) to create"
+  default     = "quickstart-terraform"
+  type        = string
+}

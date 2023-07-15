@@ -27,6 +27,16 @@ cd gcloud-tf-automation
 
 You'll have to create a service account key in GCP and download the json file. Then create the `GOOGLE_CREDENTIALS` secret in the GitHub repo to the contents of the json file.
 
+You'll have to change the `project_id` variable in the `variables.tf` file to your own project id. This is located in the `generic/modules/automation/variables.tf` file.
+
+```bash
+variable "project_id" {
+  description = "Project id of the instance(s) to create"
+  default     = "quickstart-terraform"
+  type        = string
+}
+```
+
 You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `generic/modules/automation/scripts/` to set your onw ssh keys.
 
 ```bash
