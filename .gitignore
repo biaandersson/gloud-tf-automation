@@ -1,0 +1,12 @@
+extensions.ini
+*.pyc
+.DS_Store
+terraform.tfstate
+credentials.tf
+secret.json
+.env
+.terraform
+**/.terraform
+
+.idea/
+.vscode/
