@@ -28,7 +28,7 @@ jobs:
         run: pwd && ls -la
 
       - name: check if I can find the secret
-        run: ls -lah generic/modules/automation/secrets
+        run: ls -lah /home/runner/work/gloud-tf-automation/gloud-tf-automation/.secrets/secret.json
 
       # - name: Terraform plan
       #   id: plan
