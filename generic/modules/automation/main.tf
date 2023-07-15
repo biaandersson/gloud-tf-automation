@@ -1,9 +1,3 @@
-# BEGIN: 7f8d9bcejpp
-resource "google_compute_address" "ephemeral" {
-  name         = "ephemeral-ip"
-  address_type = "EXTERNAL"
-}
-
 resource "google_compute_instance" "generic" {
   machine_type = var.instance_type
   for_each     = var.instance_name
@@ -20,9 +14,7 @@ resource "google_compute_instance" "generic" {
 
   network_interface {
     network = var.instance_network
-    access_config {
-      nat_ip = google_compute_address.ephemeral.address
-    }
+    access_config {} # Ephemeral IP
   }
 
   metadata_startup_script = local.metadata_startup_script
