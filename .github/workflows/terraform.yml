@@ -27,6 +27,9 @@ jobs:
       - name: check where I am and what I have
         run: pwd && ls -la
 
+      - name: check if I can find the secret
+        run: ls -lah generic/modules/automation/secrets
+
       # - name: Terraform plan
       #   id: plan
       #   run: terraform plan
