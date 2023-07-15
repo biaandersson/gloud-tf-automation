@@ -27,8 +27,8 @@ jobs:
       - name: check where I am and what I have
         run: pwd && ls -la
 
-      - name: Find the .secrets/secret.json file
-        run: find . -name secret.json
+      - name: Find the .secrets/secret.json file, and echo the path
+        run: find . -name secret.json -print
 
       # - name: Terraform plan
       #   id: plan
