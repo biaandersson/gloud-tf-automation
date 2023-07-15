@@ -23,11 +23,19 @@ git clone git@github.com:biaandersson/gloud-tf-automation.git
 cd gcloud-tf-automation
 ```
 
-### Infrastructure
+### Preparing the environment
 
-Change the hostname in the `main.tf` file to your own instance name. You'll have to create a service account key in GCP and download the json file. Then change the `GOOGLE_CREDENTIALS` secret in the GitHub repo to the contents of the json file.
+You'll have to create a service account key in GCP and download the json file. Then create the `GOOGLE_CREDENTIALS` secret in the GitHub repo to the contents of the json file.
 
 You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `generic/modules/automation/scripts/` to set your onw ssh keys.
+
+```bash
+ssh-keygen -t ecdsa -f <key-name>
+```
+
+### Creating the infrastructure
+
+Change the hostname in the `main.tf` file to your own instance name.
 
 ```bash
 module "automation" {
