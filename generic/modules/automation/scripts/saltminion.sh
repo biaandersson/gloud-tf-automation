@@ -1,6 +1,6 @@
 #!/bin/bash
 
-masterIP=""
+masterIP="34.88.12.192"
 
 # update, clean, upgrade
 sudo apt-get update ; sudo apt-get clean ; sudo apt-get upgrade -y
