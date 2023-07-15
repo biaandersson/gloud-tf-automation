@@ -21,11 +21,10 @@ jobs:
       - name: Terraform init
         run: terraform init
 
-      # - name: Terraform validate
-      #   run: terraform validate
-
-      - name: check where I am and what I have
-        run: pwd && ls -lah
+      - name: Terraform validate
+        run: terraform validate
+        with:
+          GCLOUD_JSON: ${{ secrets.GCLOUD_JSON }}
 
       # - name: Terraform plan
       #   id: plan
