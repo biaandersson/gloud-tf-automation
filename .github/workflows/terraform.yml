@@ -34,9 +34,11 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
-      # - name: Save plan path to GITHUB_OUTPUT
-      #   run: echo "PLAN_PATH=tfplan" >> $GITHUB_OUTPUT
+      - name: Save plan path to GITHUB_OUTPUT
+        run: echo "PLAN_PATH=tfplan" >> $GITHUB_OUTPUT
 
-      # - name: Terraform apply
-      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #   run: terraform apply -auto-approve $PLAN_PATH
+      - name: Terraform apply
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve $PLAN_PATH
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}

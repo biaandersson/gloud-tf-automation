@@ -21,5 +21,14 @@ sudo systemctl ssh restart
 # enable and restart salt-master
 sudo systemctl enable salt-master ; sudo systemctl restart salt-master
 
+# mkdir /srv/salt
+sudo mkdir -p /srv/salt
+
+# cd /srv/salt
+cd /srv/salt
+
 # clone git repo
-git clone 
+git clone git@github.com:biaandersson/saltstack.git
+
+# add git remote
+git remote add origin git@github.com:biaandersson/saltstack.git
