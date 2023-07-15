@@ -27,7 +27,7 @@ cd gcloud-tf-automation
 
 Change the hostname in the `main.tf` file to your own instance name. You'll have to create a service account key in GCP and download the json file. Then change the `GOOGLE_CREDENTIALS` secret in the GitHub repo to the contents of the json file.
 
-You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `/gcloud-projects/generic/modules/automation/scripts/` to set your onw ssh keys.
+You also need to have your own ssh key pair. Change the `ssh-keys` secret in the GitHub repo to the contents of your public key. The private key will be used to ssh into the instance. Remember to change the `generic/modules/automation/scripts/` to set your onw ssh keys.
 
 ```bash
 module "automation" {
