@@ -25,10 +25,7 @@ jobs:
       #   run: terraform validate
 
       - name: check where I am and what I have
-        run: pwd && ls -la
-
-      - name: Find the .secrets/secret.json file, and echo the path
-        run: find . -name secret.json -print
+        run: pwd && ls -lah
 
       # - name: Terraform plan
       #   id: plan
